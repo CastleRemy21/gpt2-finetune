@@ -31,7 +31,7 @@ def get_payout_multiplier(num_mines, picks):
     }
     return payout_chart.get(num_mines, [1] * 24)[picks - 1] if picks <= 24 else 1.0
 
-def mines_game_simulation(bet_amount, num_mines, num_picks, num_simulations=10000):
+def mines_game_simulation(bet_amount, num_mines, num_picks, num_simulations=100000):
     grid_size = 25  # 5x5 grid
     total_profit = 0
     
@@ -76,4 +76,4 @@ num_picks = int(input("Enter the number of safe picks before cashing out: "))
 
 # Run simulation
 profit_or_loss = mines_game_simulation(bet_amount, num_mines, num_picks)
-print(f"Total profit/loss after 10,000 simulations: {profit_or_loss:.2f}")
+print(f"Total profit/loss after 100,000 simulations: {profit_or_loss:.2f}")
